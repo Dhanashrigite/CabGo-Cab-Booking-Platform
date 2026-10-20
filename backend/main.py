@@ -19,7 +19,9 @@ from database import Base, engine, SessionLocal
 
 
 # Local development secret. Change this before deployment.
-SECRET_KEY = "cabgo-local-dev-change-this-secret-key-2026"
+import os
+
+SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
